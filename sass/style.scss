@@ -1,0 +1,75 @@
+%center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+%btn{
+    border-radius: 50%;
+    border: none
+}
+%bg_mag{
+    margin: 20px auto;
+    background-color: #ededed;
+}
+%dis_contant{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 150px;
+    padding-top: 40px;
+}
+@mixin changible_style($pad, $color, $bg_color, $f_size){
+    padding: $pad;
+    color: $color;
+    background-color: $bg_color;
+    font-size: $f_size;
+}
+.box{
+    @extend %center;
+    width: 600px;
+    height: 30vh;
+    gap: 150px;
+    @extend %bg_mag;
+    .btn_1{
+        @extend %btn;
+        @include changible_style(30px 35px,#fff,cadetblue, 30px);
+        box-shadow: 5px 10px 20px grey;
+    }
+}
+
+.wrapper{   
+    width: 600px;
+    height: 60vh;
+    @extend %bg_mag;
+
+    .wrapper_h2{
+        @include changible_style(0px, grey, none, 20px)
+    }
+
+    .wrapper_NORMAL{
+        @include changible_style(15px 25px,cadetblue, none, 20px);
+        border: none;
+    }
+
+    .wrapper_NORMAL2{
+        @include changible_style(15px 25px,#fff, cadetblue, 20px);
+        border: none;
+        box-shadow: 10px 10px 20px grey;
+    }
+    .wrapper_NORMAL3{
+        @include changible_style(15px 25px,cadetblue, #ccc, 20px);
+        border: none;
+    }
+    .wrapper_NORMAL4{
+        @include changible_style(15px 25px, rgb(192, 190, 190), none, 20px);
+        border: none;
+    }
+
+    .wrapper_NORMAL5{
+        @include changible_style(15px 25px,rgb(192, 190, 190), grey, 20px);
+        border: none;
+    }
+        .dis_contant{
+        @extend %dis_contant;
+    }
+}
